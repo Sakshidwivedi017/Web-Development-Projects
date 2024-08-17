@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins' sans-serif;
+    box-sizing: border-box;
+    color:#fff;
+    
+
+}
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    position:relative;
+}
+nav{
+    display:flex;
+   align-items: center;
+   justify-content: space-between;
+   padding:10px 0; 
+}
+.logo{
+    height:60px;
+    width:150px;
+    cursor:pointer;
+}
+nav button{
+    border:0;
+    outline:0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.lan-btn{
+    display:inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 7px 10px;
+}
+.lan-btn img{
+    width:10px;
+    margin-left: 10px;
+}
+.header-content{
+    position:absolute;
+    text-align: center;
+    margin-top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.header-content h1{
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 650px;
+}
+.header-content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.email-signup{
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    overflow: hidden;
+}
+.email-signup input{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+    color:black;
+}
+.email-signup button{
+    background-color: #db0001;
+    border: 0;
+    outline: 0;
+    color:#fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 30px;
+}
+.features{
+    padding: 50px;
+    text-align: center;
+    background-color: #000;
+    border-bottom: 6px solid #333;
+    color: #777;
+}
+.frow{
+    display:flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 0;
+
+}
+.text h2{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.text p{
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    display:block;
+
+}
+.img1 img{
+    display: block;
+    width: 479px;
+   height: 374px;
+   max-width: 100%;
+    height: auto;
+}
+/* ----------faq----------- */
+.faq{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+    background-color: #000;
+}
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+.acc{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+}
+.acc li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.acc li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display:none;
+}
+.acc .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+.acc input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+
+.acc input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+}
+.faq small{
+    font-size: 13px;
+}
+/* -------footer--------- */
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #000;
+    border-top: 6px solid #333;
+}
+
+.footer-column {
+    list-style: none;
+}
+
+.footer-column h2 {
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    padding: 0;
+}
+
+.footer-column li {
+    margin: 5px 0;
+}
