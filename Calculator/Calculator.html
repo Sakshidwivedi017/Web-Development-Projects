@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display" id="display" readonly>
+                </div>
+                <div class="row1">
+                    <input type="button" value="AC" onclick="clearDisplay()">
+                    <input type="button" value="DE" onclick="deleteLast()">
+                    <input type="button" value="%" onclick="appendToDisplay('%')">
+                    <input type="button" value="÷" class="column" onclick="appendToDisplay('÷')">
+                </div>
+                <div class="row2">
+                    <input type="button" value="7" onclick="appendToDisplay('7')">
+                    <input type="button" value="8" onclick="appendToDisplay('8')">
+                    <input type="button" value="9" onclick="appendToDisplay('9')">
+                    <input type="button" value="×" class="column" onclick="appendToDisplay('×')">
+                </div>
+                <div class="row3">
+                    <input type="button" value="4" onclick="appendToDisplay('4')">
+                    <input type="button" value="5" onclick="appendToDisplay('5')">
+                    <input type="button" value="6" onclick="appendToDisplay('6')">
+                    <input type="button" value="−" class="column" onclick="appendToDisplay('−')">
+                </div>
+                <div class="row4">
+                    <input type="button" value="1" onclick="appendToDisplay('1')">
+                    <input type="button" value="2" onclick="appendToDisplay('2')">
+                    <input type="button" value="3" onclick="appendToDisplay('3')">
+                    <input type="button" value="+" class="column" onclick="appendToDisplay('+')">
+                </div>
+                <div class="row5">
+                    <input type="button" value="00" onclick="appendToDisplay('00')">
+                    <input type="button" value="0" onclick="appendToDisplay('0')">
+                    <input type="button" value="." onclick="appendToDisplay('.')">
+                    <input type="button" value="=" class="column" onclick="calculateResult()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Appends the value to the display
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        // Calculates the result when "=" is pressed
+        function calculateResult() {
+            let display = document.getElementById('display').value;
+
+            // Replace ÷ with / for calculation
+            display = display.replace(/÷/g, '/');
+            // Replace × with * for calculation
+            display = display.replace(/×/g, '*');
+            // Replace − with - for calculation
+            display = display.replace(/−/g, '-');
+
+            // Handle percentage calculation
+            if (display.includes('%')) {
+                display = display.replace(/(\d+(\.\d+)?)%/g, '($1/100)'); // Convert x% to x/100
+            }
+
+            try {
+                // Evaluate the expression using Function constructor
+                document.getElementById('display').value = Function('"use strict";return (' + display + ')')();
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+
+        // AC button
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        // DE button
+        function deleteLast() {
+            let display = document.getElementById('display');
+            display.value = display.value.slice(0, -1);
+        }
+    </script>
+</body>
+</html>
