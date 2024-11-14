@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background: black;
+}
+
+.notes-container {
+    display: flex; 
+    align-items: center;
+    margin-top: 10px; 
+}
+
+.notes-container img {
+    height: 30px;
+    width: 30px;
+    margin-left: 30px; 
+    margin-right: 14px;
+}
+
+.notes-container h1 {
+    color: white;
+}
+
+
+.btn-container {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.btn-container button img{
+    height: 30px;
+    width: 30px;
+}
+
+.btn-container button {
+    padding: 10px 20px; /* Add some padding for better appearance */
+    background-color: #4CAF50; /* Green background for the button */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn-container button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
